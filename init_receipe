@@ -1,0 +1,10 @@
+#/bin/sh
+
+HOST=$1
+
+curl -X POST http://$HOST/person -H "Content-Type:application/json" \
+     -d "{\"name\":\"Gulasch mit Knödel\", \"description\":\"Hefeknödel mit Gulasch\"}"
+curl -X POST http://$HOST/person -H "Content-Type:application/json" \
+     -d "{\"name\":\"Gnocchi-Pfanne\", \"description\":\"(Fertig-)Gnocchi gebraten mit Oliven und Minitomaten\"}"
+curl -X POST http://$HOST/receipe -H "Content-Type:application/json" \
+     -d "{\"name\":\"Hefeklöße mit Heidelbeeren/Pflaumen\", \"description\":\"Hefeklöße mit heißen Pflaumen und/oder heißen Heidelbeeren\"}"

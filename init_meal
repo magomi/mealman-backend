@@ -1,0 +1,16 @@
+#/bin/sh
+
+HOST=$1
+
+curl -X POST http://$HOST/meal -H "Content-Type:application/json" \
+     -d "{\"date\":\"2018-10-11\",
+          \"type\":\"LUNCH\",
+          \"stage\":\"PLAN\",
+          \"receipe\":\"http://$HOST/receipe/2\"
+         }"
+curl -X POST http://$HOST/meal -H "Content-Type:application/json" \
+     -d "{\"date\":\"2018-10-12\",
+          \"type\":\"DINNER\",
+          \"stage\":\"PROPOSAL\",
+          \"receipe\":\"http://$HOST/receipe/1\"
+         }"

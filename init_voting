@@ -1,0 +1,19 @@
+#/bin/sh
+
+HOST=$1
+
+curl -X POST http://$HOST/voting -H "Content-Type:application/json" \
+     -d "{\"voter\":\"http://$HOST/person/6\",
+          \"meal\":\"http://$HOST/meal/10\",
+          \"vote\":\"DISLIKE\"
+         }"
+curl -X POST http://$HOST/voting -H "Content-Type:application/json" \
+     -d "{\"voter\":\"http://$HOST/person/7\",
+          \"meal\":\"http://$HOST/meal/10\",
+          \"vote\":\"LIKE\"
+         }"
+curl -X POST http://$HOST/voting -H "Content-Type:application/json" \
+     -d "{\"voter\":\"http://$HOST/person/8\",
+          \"meal\":\"http://$HOST/meal/10\",
+          \"vote\":\"LIKE\"
+         }"
